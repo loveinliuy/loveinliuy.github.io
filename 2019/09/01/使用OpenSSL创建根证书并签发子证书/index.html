@@ -55,31 +55,33 @@
   };
 </script>
 
-  <meta name="description" content="每一个技术的学习，都是从模仿开始">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一个小博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="总是有一些场景需要自行签发一系列证书并且让系统信任。如果每次都签发一个新的证书，显然会比较麻烦。所以只需要一个根证书，让系统/浏览器信任这个证书，后续这个根证书签发的证书都是可以被信任的了，非常方便。  整体步骤 创建根证书  创建根证书创建基础配置文件openssl-ca.cnf并写入基本配置 1touch openssl-ca.cnf  写入配置 1234567891011121314151">
+<meta name="keywords" content="openssl,CA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用OpenSSL创建根证书并签发子证书">
+<meta property="og:url" content="http://yoursite.com/2019/09/01/使用OpenSSL创建根证书并签发子证书/index.html">
 <meta property="og:site_name" content="一个小博客">
-<meta property="og:description" content="每一个技术的学习，都是从模仿开始">
+<meta property="og:description" content="总是有一些场景需要自行签发一系列证书并且让系统信任。如果每次都签发一个新的证书，显然会比较麻烦。所以只需要一个根证书，让系统/浏览器信任这个证书，后续这个根证书签发的证书都是可以被信任的了，非常方便。  整体步骤 创建根证书  创建根证书创建基础配置文件openssl-ca.cnf并写入基本配置 1touch openssl-ca.cnf  写入配置 1234567891011121314151">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-01T08:45:19.249Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个小博客">
-<meta name="twitter:description" content="每一个技术的学习，都是从模仿开始">
-  <link rel="canonical" href="http://yoursite.com/">
+<meta name="twitter:title" content="使用OpenSSL创建根证书并签发子证书">
+<meta name="twitter:description" content="总是有一些场景需要自行签发一系列证书并且让系统信任。如果每次都签发一个新的证书，显然会比较麻烦。所以只需要一个根证书，让系统/浏览器信任这个证书，后续这个根证书签发的证书都是可以被信任的了，非常方便。  整体步骤 创建根证书  创建根证书创建基础配置文件openssl-ca.cnf并写入基本配置 1touch openssl-ca.cnf  写入配置 1234567891011121314151">
+  <link rel="canonical" href="http://yoursite.com/2019/09/01/使用OpenSSL创建根证书并签发子证书/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>一个小博客</title>
+  <title>使用OpenSSL创建根证书并签发子证书 | 一个小博客</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -199,12 +201,13 @@
 
           <div id="content" class="content">
             
+
   <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block home">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/使用OpenSSL创建根证书并签发子证书/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,9 +220,8 @@
       <meta itemprop="name" content="一个小博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/01/使用OpenSSL创建根证书并签发子证书/" class="post-title-link" itemprop="url">使用OpenSSL创建根证书并签发子证书</a>
+        <h1 class="post-title" itemprop="name headline">使用OpenSSL创建根证书并签发子证书
+
           
         </h1>
 
@@ -253,7 +255,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
+        <blockquote>
 <p>总是有一些场景需要自行签发一系列证书并且让系统信任。如果每次都签发一个新的证书，显然会比较麻烦。所以只需要一个根证书，让系统/浏览器信任这个证书，后续这个根证书签发的证书都是可以被信任的了，非常方便。</p>
 </blockquote>
 <h2 id="整体步骤"><a href="#整体步骤" class="headerlink" title="整体步骤"></a>整体步骤</h2><ul>
@@ -321,429 +323,52 @@
 </ol>
 <h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p><a href="https://stackoverflow.com/questions/21297139/how-do-you-sign-a-certificate-signing-request-with-your-certification-authority/21340898" target="_blank" rel="noopener"><a href="https://stackoverflow.com/questions/21297139/how-do-you-sign-a-certificate-signing-request-with-your-certification-authority" target="_blank" rel="noopener">How do you sign a Certificate Signing Request with your Certification Authority?</a></a></p>
 
-        
-      
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/openssl-CA/" rel="tag"># openssl,CA</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/01/tomcat安全配置/" rel="next" title="tomcat安全配置">
+                  <i class="fa fa-chevron-left"></i> tomcat安全配置
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/tomcat安全配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="丶世博">
-      <meta itemprop="description" content="每一个技术的学习，都是从模仿开始">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一个小博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/01/tomcat安全配置/" class="post-title-link" itemprop="url">tomcat安全配置</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-01 15:46:11 / 修改时间：15:46:32" itemprop="dateCreated datePublished" datetime="2019-09-01T15:46:11+08:00">2019-09-01</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="使用session的httpOnly"><a href="#使用session的httpOnly" class="headerlink" title="使用session的httpOnly"></a>使用session的httpOnly</h1><p>修改<code>tomcat</code>配置文件夹下的<code>server.xml</code>文件<br><code>tomcat/conf/server.xml</code>，在<code>Host</code>配置节加入如下代码:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">path</span>=<span class="string">"xxx"</span> <span class="attr">useHttpOnly</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>说明： <code>xxx</code>代表应用的部署路径</p>
-<h1 id="关闭目录浏览功能"><a href="#关闭目录浏览功能" class="headerlink" title="关闭目录浏览功能"></a>关闭目录浏览功能</h1><p>修改<code>tomcat</code>配置文件夹下的<code>web.xml</code>文件<br><code>tomcat/conf/web.xml</code>如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>default<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.apache.catalina.servlets.DefaultServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>debug<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>0<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>listings<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>参数说明</p>
-<ul>
-<li>debug: 控制消息的显示级别，通常使用0和1，数字越高级别越大。默认是0。</li>
-<li>listings: 控制是否显示目录下的所有文件。默认false，不显示。</li>
-<li>readonly: 控制是否是只读，不可被修改的。默认为true，不可修改。</li>
-</ul>
-<h1 id="删除所有不需要的功能和文件，如example等"><a href="#删除所有不需要的功能和文件，如example等" class="headerlink" title="删除所有不需要的功能和文件，如example等"></a>删除所有不需要的功能和文件，如example等</h1><h2 id="删除不需要的文件夹"><a href="#删除不需要的文件夹" class="headerlink" title="删除不需要的文件夹"></a>删除不需要的文件夹</h2><p>将<code>tomcat</code>的<code>webapp</code>目录下的所有无用文件夹都删除，包括但不仅包括<code>docs</code>, <code>examples</code>, <code>host-manager</code>, <code>manager</code>, <code>ROOT</code>。</p>
-<h2 id="删除manager和host-manager功能"><a href="#删除manager和host-manager功能" class="headerlink" title="删除manager和host-manager功能"></a>删除<code>manager</code>和<code>host-manager</code>功能</h2><p>修改<code>tomcat</code>配置文件<code>conf/server.xml</code>如下：<br>删除:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;GlobalNamingResources&gt;</span><br><span class="line">    &lt;Resource name=&quot;UserDatabase&quot;</span><br><span class="line">              auth=&quot;Container&quot;</span><br><span class="line">              type=&quot;org.apache.catalina.UserDatabase&quot;</span><br><span class="line">              description=&quot;User database that can be updated and saved&quot;</span><br><span class="line">              factory=&quot;org.apache.catalina.users.MemoryUserDatabaseFactory&quot;</span><br><span class="line">              pathname=&quot;conf/tomcat-users.xml&quot;/&gt;</span><br><span class="line">&lt;/GlobalNamingResources&gt;</span><br></pre></td></tr></table></figure>
-
-<p>删除：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Realm className=&quot;org.apache.catalina.realm.UserDatabaseRealm&quot; resourceName=&quot;UserDatabase&quot;/&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="删除响应头中版本信息"><a href="#删除响应头中版本信息" class="headerlink" title="删除响应头中版本信息"></a>删除响应头中版本信息</h1><p>通常tomcat的响应头信息如下：<br><img src="/api/file/getImage?fileId=58c74791e1017b207a000002" alt><br>需要改掉这些信息防止恶意根据对应版本的漏洞进行攻击。</p>
-<ol>
-<li><p>进入tomcat的lib目录找到<code>catalina.jar</code>文件</p>
-</li>
-<li><p>使用命令<code>unzip catalina.jar</code>，解压jar包得到文件夹<code>META-INF</code>和<code>org</code></p>
-</li>
-<li><p>进入<code>org/apache/catalina/util</code> 编辑配置文件<code>ServerInfo.properties</code></p>
-</li>
-<li><p>修改以下字段为你想要的信息</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">server.info=server</span><br><span class="line">server.number=1.0</span><br><span class="line">server.built=day</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将修改后的信息压缩回jar包</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd  /tomcat/lib</span><br><span class="line">jar -uvf catalina.jar org/apache/catalina/util/ServerInfo.properties</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改<code>/conf/server.xml</code></p>
-<p> 在connector配置节增加<code>server</code>属性</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector xxxxx</span><br><span class="line">        server=&quot;Server 1.0&quot;/&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启tomcat</p>
-</li>
-</ol>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
   </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/vim重复操作/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="丶世博">
-      <meta itemprop="description" content="每一个技术的学习，都是从模仿开始">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一个小博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/01/vim重复操作/" class="post-title-link" itemprop="url">vim重复操作</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-01 15:41:57 / 修改时间：15:43:45" itemprop="dateCreated datePublished" datetime="2019-09-01T15:41:57+08:00">2019-09-01</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>对于重复操作，可以有多种不同的方式。</p>
-<ul>
-<li>record（记录行为）方式<br>在normal模式下，使用q开始记录行为，记录完成后，使用q结束记录。<br>例如，我想每隔一行删除一个元素：</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这个是正常的行</span><br><span class="line">删除的行</span><br><span class="line">这个是正常的行</span><br><span class="line">删除的行</span><br></pre></td></tr></table></figure>
-
-<p>需要键入内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q a dd j</span><br></pre></td></tr></table></figure>
-
-<p>重复键入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2@a</span><br></pre></td></tr></table></figure>
-
-<p>说明：a是录制的命令的名称，名称可以为所有的小写，大写字母。</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/Nginx-编译安装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="丶世博">
-      <meta itemprop="description" content="每一个技术的学习，都是从模仿开始">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一个小博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/01/Nginx-编译安装/" class="post-title-link" itemprop="url">Nginx 编译安装</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-01 15:40:03 / 修改时间：15:40:43" itemprop="dateCreated datePublished" datetime="2019-09-01T15:40:03+08:00">2019-09-01</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="编译环境"><a href="#编译环境" class="headerlink" title="编译环境"></a>编译环境</h2><p>安装make，gcc和g++</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc automake autoconf libtool make</span><br><span class="line">yum install gcc gcc-c++</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><p>首先，我们需要选定一个源码的安装目录，这里可以是任何目录。本文使用的是<code>/opt/nginx/src</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/nginx/src</span><br><span class="line">cd /opt/nginx/src</span><br></pre></td></tr></table></figure>
-
-<h3 id="pcre，rewrite重写"><a href="#pcre，rewrite重写" class="headerlink" title="pcre，rewrite重写"></a>pcre，rewrite重写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz</span><br><span class="line">tar -zxvf pcre-xxx.tar.gz</span><br><span class="line">cd pcre-xxx</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<h3 id="zlib，gzip压缩"><a href="#zlib，gzip压缩" class="headerlink" title="zlib，gzip压缩"></a>zlib，gzip压缩</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http://zlib.net/zlib-1.2.11.tar.gz</span><br><span class="line">tar -zxvf zlib-xxx.tar.gz</span><br><span class="line">cd zlib-xxx</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<h3 id="openssl，ssl加密"><a href="#openssl，ssl加密" class="headerlink" title="openssl，ssl加密"></a>openssl，ssl加密</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.openssl.org/source/openssl-1.0.2k.tar.gz</span><br><span class="line">tar -zxvf openssl-xxx.tar.gz</span><br><span class="line">cd openssl-xxx</span><br><span class="line">./config</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http://nginx.org/download/nginx-1.10.3.tar.gz</span><br><span class="line">tar -zxvf nginx-xxx.tar.gz</span><br><span class="line">cd nginx-xxx</span><br><span class="line">./configure --prefix=/opt/nginx --with-http_ssl_module --with-pcre=/opt/nginx/src/pcre-xxx --with-zlib=/opt/nginx/src/zlib-xxx --with-openssl=/opt/nginx/src/openssl-xxx</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
-<li><code>prefix</code>：安装路径</li>
-<li><code>with-http_ssl_module</code>：安装ssl模块</li>
-<li><code>with-pcre</code>：编译pcre，该路径为pcre源码所在路径</li>
-<li><code>with-zlib</code>：编译zlib，该路径为zlib源码所在路径</li>
-<li><code>with-openssl</code>：编译openssl，该路径为openssl源码所在路径</li>
-</ul>
-<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
-
-<p>nginx默认监听80端口，使用<code>http://[IP]/</code>进行访问即可</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/MySQL-5-7安装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="丶世博">
-      <meta itemprop="description" content="每一个技术的学习，都是从模仿开始">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一个小博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/01/MySQL-5-7安装/" class="post-title-link" itemprop="url">MySQL 5.7安装</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-01 15:37:48 / 修改时间：15:38:37" itemprop="dateCreated datePublished" datetime="2019-09-01T15:37:48+08:00">2019-09-01</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="mysql-5-7的数据库安装方式和之前使用是mysql-5-1的安装方式有点不一样，在此特意记录一下。"><a href="#mysql-5-7的数据库安装方式和之前使用是mysql-5-1的安装方式有点不一样，在此特意记录一下。" class="headerlink" title="mysql 5.7的数据库安装方式和之前使用是mysql 5.1的安装方式有点不一样，在此特意记录一下。"></a>mysql 5.7的数据库安装方式和之前使用是mysql 5.1的安装方式有点不一样，在此特意记录一下。</h3><ol>
-<li><p>下载包</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.sohu.com/mysql/MySQL-5.7/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mysql-5.7.12-linux-glibc2.5-x86_64.tar.gz</span><br><span class="line">mv mysql-5.7.12-linux-glibc2.5-x86_64  /usr/local/mysql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">useradd -M -s /sbin/nologin  mysql</span><br><span class="line">mkdir -p /data/mysql</span><br><span class="line">chown mysql /data/mysql</span><br><span class="line">cd /usr/local/mysql</span><br><span class="line">./bin/mysqld  --initialize --user=mysql --datadir=/data/mysql</span><br></pre></td></tr></table></figure>
-
-<p> <em>注意，这一步最后一行会有一个提示</em><br> <code>[Note] A temporary password is generated for root@localhost: B*s1i(*,kXwg</code><br> 最后面的字符串为root密码。</p>
-</li>
-<li><p>SSL设置</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/mysql_ssl_rsa_setup --datadir=/data/mysql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置为服务</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cp support-files/my-default.cnf  /etc/my.cnf</span><br><span class="line">vim /etc/my.cnf //编辑或者修改</span><br><span class="line">basedir = /usr/local/mysql</span><br><span class="line">datadir = /data/mysql</span><br><span class="line">port = 3306</span><br><span class="line">socket = /tmp/mysql.sock</span><br></pre></td></tr></table></figure>
-
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cp support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line">vim /etc/init.d/mysqld</span><br><span class="line">//编辑或者修改</span><br><span class="line">basedir=/usr/local/mysql</span><br><span class="line">datadir=/data/mysql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动服务<br> <code>service mysqld start</code></p>
-</li>
-<li><p>设置root密码</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用初始化密码登录</span><br><span class="line">/usr/local/mysql/bin/mysql -uroot -p&apos;B*s1i(*,kXwg&apos;  //进入后直接设置密码</span><br><span class="line">mysql&gt;set password = password(&apos;mypass&apos;);   //一定要设置一下新密码</span><br></pre></td></tr></table></figure>
-
-<p> 退出来，再使用新的密码登录就可以了</p>
-</li>
-<li><p>修改字符集<br>修改my.cnf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在[mysqld]下添加</span><br><span class="line">character-set-server=utf8</span><br><span class="line"></span><br><span class="line">在[client]下添加</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="对于忘记初始化密码的情况"><a href="#对于忘记初始化密码的情况" class="headerlink" title="对于忘记初始化密码的情况"></a><em>对于忘记初始化密码的情况</em></h3><p>还有一种情况，就是不知道初始化密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line">在[mysqld]下面增加一行</span><br><span class="line">skip-grant-tables</span><br><span class="line">重启  /etc/init.d/mysqld restart</span><br><span class="line"></span><br><span class="line">/usr/local/mysql/bin/mysql -uroot</span><br><span class="line">mysql&gt; update user set authentication_string=password(&apos;123333&apos;) where user=&apos;root&apos;;</span><br><span class="line">退出来后，更改my.cnf，去掉刚加的 skip-grant-tables</span><br><span class="line">重启 /etc/init.d/mysqld restart</span><br></pre></td></tr></table></figure>
-
-<p>此就可以使用新的密码了。</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-  </div>
-
-  
 
 
           </div>
@@ -762,6 +387,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -774,6 +404,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整体步骤"><span class="nav-number">1.</span> <span class="nav-text">整体步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建根证书"><span class="nav-number">2.</span> <span class="nav-text">创建根证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建子证书"><span class="nav-number">3.</span> <span class="nav-text">创建子证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#签发证书"><span class="nav-number">4.</span> <span class="nav-text">签发证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附"><span class="nav-number">5.</span> <span class="nav-text">附</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考内容"><span class="nav-number">6.</span> <span class="nav-text">参考内容</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
